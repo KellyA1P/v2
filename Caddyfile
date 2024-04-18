@@ -9,11 +9,18 @@
 # domain name.
 
 
-        # Set this path to your site's directory.
-        root * /usr/share/caddy
+@websockets {
+header Connection Upgrade
+header Upgrade websocket
+path /hkc77
+}
+reverse_proxy @websockets localhost:10000
 
-        # Enable the static file server.
-        file_server
+
+root * /usr/share/caddy
+
+file_server
+
 
         # Another common task is to set up a reverse proxy:
         # reverse_proxy localhost:8080
