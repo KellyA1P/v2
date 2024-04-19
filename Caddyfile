@@ -9,7 +9,7 @@
 # domain name.
 
 
-file_server
+
 @websockets {
 header Connection Upgrade
 header Upgrade websocket
